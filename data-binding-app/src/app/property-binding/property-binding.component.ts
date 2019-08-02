@@ -21,4 +21,6 @@ export class PropertyBindingComponent implements OnInit {
     },400);
   }
 
+  // nao terminado, apenas acompanhei a aula
+
 }
