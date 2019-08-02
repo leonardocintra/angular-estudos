@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-content>
+        <section>
+            <h3> Valor: {{ valueLeo }}</h3>
+            <app-child-item [title]="title" (incrementar)="incrementarValor($event)">
+
+            </app-child-item>
+        </section>
+    </mat-card-content>
+</mat-card>

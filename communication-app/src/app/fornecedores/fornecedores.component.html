@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-content>
+        <section>
+            <mat-form-field>
+                <input matInput placeholder="Nome" [(ngModel)]="nome">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Idade" type="number" [(ngModel)]="idade">
+            </mat-form-field>
+            <button mat-mini-fab color="primary" (click)="save()">
+                <mat-icon>check</mat-icon>
+            </button>
+        </section>
+    </mat-card-content>
+</mat-card>
+
+<app-item-fornecedor 
+    *ngFor="let f of fornecedores let i=index"
+    (removeFornecedor)="deleteFornecedor(i)"
+    (updateFornecedor)="updateFornecedor($event, i)"
+    [fornecedor]="f">
+    
+</app-item-fornecedor>

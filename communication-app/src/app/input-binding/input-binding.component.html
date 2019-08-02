@@ -1,0 +1,11 @@
+<p>
+    First Name: {{ firstName }} {{ lastName }} - {{ age }} anos
+</p>
+
+<h1>
+    Meus clientes
+</h1>
+<div class="horizontal-buttons" *ngFor="let c of clients">
+    <app-client [client]="c"></app-client>
+    <hr>
+</div>
