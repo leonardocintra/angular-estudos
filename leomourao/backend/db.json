@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Banana",
+            "price": 5.04
+        },
+        {
+            "id": 2,
+            "name": "Morango",
+            "price": 5.49
+        },
+        {
+            "id": 3,
+            "name": "Abacaxi",
+            "price": 4.04
+        }
+    ]
+}
