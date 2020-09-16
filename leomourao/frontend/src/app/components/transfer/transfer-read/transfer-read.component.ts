@@ -16,15 +16,24 @@ export class TransferReadComponent implements OnInit {
     name: ''
   };
 
-  displayedColumns = ['id', 'accountOrigin', 'accountTarget', 'amount', 'tax', 'scheduling'];
+  displayedColumns = ['id', 'accountOrigin', 'accountTarget', 'amount', 'tax', 'totalPaid', 'scheduling'];
 
   constructor(private transferService: TransferService) { }
 
   ngOnInit(): void {
-    this.transferService.read().subscribe(t => {
+
+    if (this.customer.cpf) {
+      this.transferService.read(this.customer.cpf).subscribe(t => {
+        this.transfers = t['records'];
+        this.customer = t['records'][0]['customer'];
+      });
+    }
+  }
+
+  findByCpf() {
+    this.transferService.read(this.customer.cpf).subscribe(t => {
       this.transfers = t['records'];
-      this.customer = t['records'][0]['customer'];
-    });
+    })
   }
 
 }

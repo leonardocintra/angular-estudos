@@ -24,6 +24,7 @@ export interface Transfer {
     id?: number
     accountOrigin: string
     accountTarget: string
+    totalPaid?: number
     amount: number
     tax?: Tax
     customer: Customer

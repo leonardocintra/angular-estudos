@@ -12,8 +12,8 @@ export class TransferService {
 
   constructor(private http: HttpClient) { }
 
-  read(): Observable<ResponseMeta[]> {
-    return this.http.get<ResponseMeta[]>(`${this.baseUrl}/customer?cpf=21122233344`);
+  read(cpf: string): Observable<ResponseMeta[]> {
+    return this.http.get<ResponseMeta[]>(`${this.baseUrl}/customer?cpf=${cpf}`);
   }
 
   create(transfer: Transfer): Observable<ResponseMeta> {

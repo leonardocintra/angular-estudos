@@ -1,3 +1,4 @@
+import { TransferReadComponent } from './components/transfer/transfer-read/transfer-read.component';
 import { TransferCreateComponent } from './components/transfer/transfer-create/transfer-create.component';
 import { TransferCrudComponent } from './views/transfer-crud/transfer-crud.component';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: "transfer/create",
     component: TransferCreateComponent
+  },
+  {
+    path: "transfer/:cpf",
+    component: TransferReadComponent
   }
 ];
 

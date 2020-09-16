@@ -12,6 +12,8 @@ import * as moment from 'moment';
 export class TransferCreateComponent implements OnInit {
 
   transferDate: string = '';
+  customerName: string = '';
+  customerCpf: string = '';
 
   transfer: Transfer = {
     accountOrigin: '',
@@ -37,8 +39,8 @@ export class TransferCreateComponent implements OnInit {
     }
 
     let customer: Customer = {
-      cpf: '21122233344',
-      name: 'Airton Senna'
+      cpf: this.customerCpf,
+      name: this.customerName
     }
 
     let novoTransfer: Transfer = {
