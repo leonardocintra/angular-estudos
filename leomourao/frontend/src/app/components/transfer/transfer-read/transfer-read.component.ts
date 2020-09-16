@@ -1,3 +1,4 @@
+import { Customer } from './../transfer.model';
 import { TransferService } from './../transfer.service';
 import { Component, OnInit } from '@angular/core';
 import { Transfer } from '../transfer.model';
@@ -10,6 +11,11 @@ import { Transfer } from '../transfer.model';
 export class TransferReadComponent implements OnInit {
 
   transfers: Transfer[];
+  customer: Customer = {
+    cpf: '',
+    name: ''
+  };
+
   displayedColumns = ['id', 'accountOrigin', 'accountTarget', 'amount', 'tax', 'scheduling'];
 
   constructor(private transferService: TransferService) { }
@@ -17,6 +23,7 @@ export class TransferReadComponent implements OnInit {
   ngOnInit(): void {
     this.transferService.read().subscribe(t => {
       this.transfers = t['records'];
+      this.customer = t['records'][0]['customer'];
     });
   }
 

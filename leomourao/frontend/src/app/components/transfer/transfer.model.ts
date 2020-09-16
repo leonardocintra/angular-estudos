@@ -4,8 +4,8 @@ export interface ResponseMeta {
 }
 
 export interface Scheduling {
-    id: number
-    schedulingDate: Date
+    id?: number
+    schedulingDate?: Date
     transferDate: Date
 }
 
@@ -14,11 +14,18 @@ export interface Tax {
     amount: number
 }
 
+export interface Customer {
+    id?: number,
+    name: string,
+    cpf: string
+}
+
 export interface Transfer {
     id?: number
     accountOrigin: string
     accountTarget: string
     amount: number
-    tax: Tax
+    tax?: Tax
+    customer: Customer
     scheduling: Scheduling
 }
