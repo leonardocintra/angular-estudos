@@ -8,7 +8,7 @@ import { ResponseMeta, Transfer } from './transfer.model';
 })
 export class TransferService {
 
-  readonly baseUrl = "http://localhost:8080/v1/scheduling/transfer";
+  readonly baseUrl = "https://cvc-api.herokuapp.com/v1/scheduling/transfer";
 
   constructor(private http: HttpClient) { }
 
